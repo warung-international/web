@@ -9,9 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment:
-      name: 'Production'
-      url: 'https://warunginternational.eu.org'
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:

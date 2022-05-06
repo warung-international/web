@@ -20,7 +20,7 @@ const Page = () => {
         <meta name="robots" content="index, follow" />
         <meta name="revisit-after" content="3 days" />
         <meta name="author" content="mclemie" />
-        <meta property="og:image" content="https://cdn.discordapp.com/icons/922523614828433419/4f451776963ac9c0a8ed6abf5c2d16c4.png?size=4096" />
+        <meta property="og:image" content="https://user-images.githubusercontent.com/27568445/167063748-4cf22a8e-0844-4d7e-8554-7166baa2957e.png" />
       </Head>
       <Link
         href="https://discord.gg/DnZ9GhQzCM"

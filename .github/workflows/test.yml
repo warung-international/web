@@ -1,4 +1,4 @@
-name: Build Test Documentations 
+name: Test
 on:
   pull_request:
     branches:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   test:
-    name: Build Test Documentations
+    name: Build Test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Actions

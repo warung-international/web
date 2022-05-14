@@ -45,7 +45,7 @@ const Page = () => {
               animationDuration: "2s",
               animationName: "anim",
               animationIterationCount: "infinite",
-              animationDirection: "alternate",
+              animationDirection: "alternate-reverse",
               animationPlayState: "running",
             }}
           >

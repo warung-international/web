@@ -1,5 +1,5 @@
-import dbConnect from '../../../lib/dbConnect'
-import levelling from '../../../models/Levelling'
+import dbConnect from '../../lib/dbConnect'
+import levelling from '../../models/Levelling'
 
 export default async function handler(req, res) {
   const { method } = req

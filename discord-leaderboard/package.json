@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "scripts": {
+    "lint": "next lint",
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next export",
+    "deploy": "next build && next export",
+    "start": "next start"
+  },
+  "dependencies": {
+    "mongoose": "latest",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "swr": "latest"
+  },
+  "devDependencies": {
+    "eslint": "latest",
+    "eslint-config-next": "latest"
+  }
+}

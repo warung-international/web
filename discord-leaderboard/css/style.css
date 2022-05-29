@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+* {
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+}
+
+/* Nav Area */
+.top-bar {
+  width: 100%;
+  margin-top: 0;
+  position: relative;
+  height: 80px;
+  text-align: right;
+}
+#title {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  display: inline-block;
+  height: 100%;
+}
+.nav {
+  height: 100%;
+  display: inline-block;
+}
+.nav a {
+  margin: 0 20px;
+  font-size: 120%;
+  height: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Styles for Cards */
+.card {
+  display: inline-block;
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+  border: 1.25px solid rgb(233, 233, 233);
+  border-radius: 16px;
+  margin: 10px;
+  transition: 0.5s all;
+  --shadow: transparent;
+  box-shadow: 0 0 10px 5px var(--shadow);
+  position: relative;
+  font-size: 100%;
+}
+
+.card:hover {
+  --shadow: rgba(53, 53, 53, 0.103);
+  transform:  translate(10px, 10px);
+  background: blue;
+}
+
+.card:hover .main-content {
+  pointer-events: initial;
+  opacity: 1;
+}
+
+.card * {
+  margin: 0;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.main-content {
+  padding: 25px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s all;
+}
+
+.stats {
+  color: grey;
+  font-size: 110%;
+}
+
+.displayname {
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 170%;
+}
+
+.levels {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 150%;
+}
+
+.fpanel-name {
+  color: white;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-size: 200%;
+  padding: 10px;
+  text-shadow: 0px 0px 4px black;
+}
+
+li {
+  list-style-type: none;
+  margin: 0;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.btn-container {
+  text-align: right;
+  padding: 10px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.btn {
+  --accent: grey;
+  cursor: pointer;
+  background: transparent;
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 90%;
+  letter-spacing: 1px;
+  transition: 0.5s all;
+  outline: none;
+}
+
+.btn:hover {
+  background: var(--accent);
+  color: white;
+}
+
+.back.btn {
+  --accent: green;
+}
+
+.view.btn {
+  --accent: blue;
+  margin-left: 10px;
+}
+
+/* footer */
+
+.footer-white {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.text-muted {
+  color: #6c757d !important
+}
+
+.text-center {
+  text-align: center !important
+}

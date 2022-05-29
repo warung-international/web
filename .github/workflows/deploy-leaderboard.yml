@@ -1,0 +1,25 @@
+name: Deploy (Leaderboards)
+on:
+  push:
+    branches: [master]
+    paths-ignore:
+      - "home/**"
+      - "/package.json"
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Deploy to Vercel Action
+        uses: BetaHuhn/deploy-to-vercel-action@latest
+        with:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.LB_PID }}
+          ALIAS_DOMAINS: ${{ secrets._LB_ALIAS_DOMAINS }}
+          GITHUB_DEPLOYMENT: false

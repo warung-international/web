@@ -11,6 +11,9 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: discord-leaderboard
     steps:
       - name: Checkout
         uses: actions/checkout@v2

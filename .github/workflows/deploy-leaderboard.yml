@@ -4,7 +4,6 @@ on:
     branches: [master]
     paths-ignore:
       - "home/**"
-      - "/package.json"
   workflow_dispatch:
 
 jobs:

@@ -10,9 +10,6 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: "home"
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -25,3 +22,4 @@ jobs:
           VERCEL_PROJECT_ID: ${{ secrets.HOME_PID }}
           ALIAS_DOMAINS: ${{ secrets.HOME_ALIAS_DOMAINS }}
           GITHUB_DEPLOYMENT: false
+          WORKING_DIRECTORY: "home"

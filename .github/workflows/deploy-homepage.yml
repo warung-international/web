@@ -23,5 +23,5 @@ jobs:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.HOME_PID }}
-          ALIAS_DOMAINS: ${{ secrets._HOME_ALIAS_DOMAINS }}
+          ALIAS_DOMAINS: ${{ secrets.HOME_ALIAS_DOMAINS }}
           GITHUB_DEPLOYMENT: false

@@ -10,12 +10,14 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: "discord-leaderboard"
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - run: cd discord-leaderboard
       - name: Deploy to Vercel Action
-        uses: BetaHuhn/deploy-to-vercel-action@latest
+        uses: BetaHuhn/deploy-to-vercel-action@v1
         with:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}

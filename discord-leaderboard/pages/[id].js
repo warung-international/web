@@ -14,8 +14,8 @@ const LevellingPage = ({ pet }) => {
           />
           <h3 className="fpanel-name">{pet.displayname}</h3>
           <div className="main-content">
-            <p className="displayname">{pet.displayname}</p>
-            <p className="levels">Level {pet.level}</p>
+            <p className="displayname" style={{ color: palette.background }}>{pet.displayname}</p>
+            <p className="levels" style={{ color: palette.background }}>Level {pet.level}</p>
             <p className="stats">Total XP: {pet.formatxp}</p>
             <p className="stats">Total Message: {pet.formatmessage}</p>
             <div className="btn-container">

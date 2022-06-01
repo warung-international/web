@@ -1,8 +1,9 @@
 import dbConnect from '../lib/dbConnect'
 import Levelling from '../models/Levelling'
 import Link from 'next/link'
-import { Grid } from '@geist-ui/core'
+import { Grid, useTheme } from '@geist-ui/core'
 
+const { palette } = useTheme()
 const Index = ({ pets }) => (
   <>
   <Grid.Container gap={2} justify="center">
@@ -15,8 +16,8 @@ const Index = ({ pets }) => (
           />
           <h3 className="fpanel-name">{pet.displayname}</h3>
           <div className="main-content">
-            <p className="displayname">{pet.displayname}</p>
-            <p className="levels">Level {pet.level}</p>
+            <p className="displayname" style={{ color: palette.background }}>{pet.displayname}</p>
+            <p className="levels" style={{ color: palette.background }}>Level {pet.level}</p>
             <div className="btn-container">
               <Link href="/[userid]" as={`/${pet._id}`}>
                 <button className="btn view">Details</button>

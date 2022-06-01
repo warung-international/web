@@ -1,14 +1,17 @@
 {
+  "name": "discord-leaderboard",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "lint": "next lint",
     "dev": "next dev",
     "build": "next build",
-    "export": "next export",
-    "deploy": "next build && next export",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
+    "@geist-ui/core": "latest",
+    "@geist-ui/icons": "latest",
+    "inter-ui": "latest",
     "mongoose": "latest",
     "next": "latest",
     "react": "latest",

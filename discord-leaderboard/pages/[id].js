@@ -1,10 +1,12 @@
 import Link from 'next/link'
 import dbConnect from '../lib/dbConnect'
 import Levelling from '../models/Levelling'
+import { Grid } from '@geist-ui/core'
 
 /* Allows you to view user card info*/
 const LevellingPage = ({ pet }) => {
   return (
+    <Grid.Container gap={2} justify="center">
     <div key={pet._id}>
         <div className="card">
           <img 
@@ -24,6 +26,7 @@ const LevellingPage = ({ pet }) => {
           </div>
         </div>
     </div>
+    </Grid.Container>
   )
 }
 

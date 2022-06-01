@@ -1,17 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-
-* {
-  font-family: 'Inter', sans-serif;
-  box-sizing: border-box;
-}
-
 /* Nav Area */
 .top-bar {
   width: 100%;
-  margin-top: 0;
+  margin-top: 2%;
   position: relative;
   height: 80px;
   text-align: right;
+  margin-bottom: 2%;
 }
 #title {
   position: absolute;
@@ -98,12 +92,14 @@
   font-weight: bold;
   text-decoration: underline;
   font-size: 170%;
+  color: #000;
 }
 
 .levels {
   font-weight: bold;
   font-style: italic;
   font-size: 150%;
+  color: #6c757d;
 }
 
 .fpanel-name {

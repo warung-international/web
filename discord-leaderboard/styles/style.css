@@ -92,12 +92,14 @@
   font-weight: bold;
   text-decoration: underline;
   font-size: 170%;
+  color: #000;
 }
 
 .levels {
   font-weight: bold;
   font-style: italic;
   font-size: 150%;
+  color: #6c757d;
 }
 
 .fpanel-name {

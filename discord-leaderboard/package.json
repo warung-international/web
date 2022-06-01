@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@geist-ui/core": "latest",
-    "@geist-ui/icons": "^1.0.2",
+    "@geist-ui/icons": "latest",
     "inter-ui": "latest",
     "mongoose": "latest",
     "next": "latest",

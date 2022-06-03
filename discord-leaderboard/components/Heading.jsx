@@ -17,7 +17,7 @@ export const Heading = () => {
         <meta name="author" content="mclemie" />
         <meta property="og:image" content="../wi-logo.png" />
         </Head>
-        <Script src="https://scripts.simpleanalyticscdn.com/latest.js"></Script>
+        <Script src="https://analytics.warunginternational.eu.org/latest.js"></Script>
     </>
   );
 };

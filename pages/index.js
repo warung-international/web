@@ -23,7 +23,7 @@ const Page = () => {
         <meta property="og:image" content="https://user-images.githubusercontent.com/27568445/167063748-4cf22a8e-0844-4d7e-8554-7166baa2957e.png" />
       </Head>
       <Link
-        href="https://discord.gg/DnZ9GhQzCM"
+        href="https://discord.gg/y4D5zbf4AQ"
         _hover={{ textDecoration: "none" }}
       >
         <Heading fontFamily="Inter">

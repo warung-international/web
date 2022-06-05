@@ -27,7 +27,7 @@ const LevellingPage = ({ pet }) => {
             <p className="stats">Total XP: {pet.formatxp}</p>
             <p className="stats">Total Message: {pet.formatmessage}</p>
             <div className="btn-container">
-              <Link href="/">
+              <Link href="/discord-leaderboard">
                 <button className="btn back">← Go Back</button>
               </Link>
             </div>

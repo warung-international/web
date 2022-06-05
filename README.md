@@ -23,7 +23,7 @@
 
 # Warung International Web Services
 
-This monorepo contains the homepage and server leaderboards for Warung International Discord Server.
+This repo contains the homepage and server leaderboards for Warung International Discord Server.
 
 ## Development
 

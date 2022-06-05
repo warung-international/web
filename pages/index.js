@@ -49,7 +49,7 @@ const Page = () => {
               animationPlayState: "running",
             }}
           >
-            Warung International
+            warunginternational
           </Text>
         </Heading>
       </Link>

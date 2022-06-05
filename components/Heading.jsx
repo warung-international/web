@@ -1,6 +1,5 @@
 /*  ./components/Footer.jsx     */
 import Head from 'next/head'
-import Script from 'next/script'
 
 export const Heading = () => {
   return (
@@ -17,7 +16,6 @@ export const Heading = () => {
         <meta name="author" content="mclemie" />
         <meta property="og:image" content="../wi-logo.png" />
         </Head>
-        <Script src="https://analytics.warunginternational.eu.org/latest.js"></Script>
     </>
   );
 };

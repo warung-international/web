@@ -1,9 +1,9 @@
-name: Deploy (Homepage)
+name: Deploy
 on:
   push:
     branches: [master]
-    paths-ignore:
-      - "discord-leaderboard/**"
+  schedule:
+    - cron: "* * * 1,2,3,4,5,6,7,8,9,10,11,12 *"
   workflow_dispatch:
 
 jobs:
@@ -21,5 +21,4 @@ jobs:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.HOME_PID }}
           ALIAS_DOMAINS: ${{ secrets.HOME_ALIAS_DOMAINS }}
-          GITHUB_DEPLOYMENT: false
-          WORKING_DIRECTORY: "home"
+          GITHUB_DEPLOYMENT: true

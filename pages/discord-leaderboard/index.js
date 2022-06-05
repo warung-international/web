@@ -1,10 +1,18 @@
-import dbConnect from '../lib/dbConnect'
-import Levelling from '../models/Levelling'
+import dbConnect from '../../lib/dbConnect'
+import Levelling from '../../models/Levelling'
 import Link from 'next/link'
 import { Grid } from '@geist-ui/core'
+import { Heading } from '../../components/Heading';
+import { Navbar } from '../../components/Navbar';
+import { Footer } from '../../components/Footer';
 
 const Index = ({ pets }) => (
   <>
+  <Heading />
+      <div className="top-bar">
+        <Navbar />
+      </div>
+      <div className="grid wrapper">
   <Grid.Container gap={2} justify="center">
     {/* Create a card for each user */}
     {pets.map((pet) => (
@@ -18,7 +26,7 @@ const Index = ({ pets }) => (
             <p className="displayname">{pet.displayname}</p>
             <p className="levels">Level {pet.level}</p>
             <div className="btn-container">
-              <Link href="/[userid]" as={`/${pet._id}`}>
+              <Link href="/discord-leaderboard/[userid]" as={`/discord-leaderboard/${pet._id}`}>
                 <button className="btn view">Details</button>
               </Link>
             </div>
@@ -27,6 +35,8 @@ const Index = ({ pets }) => (
       </div>
     ))}
     </Grid.Container>
+    </div>
+    <Footer />
   </>
 )
 

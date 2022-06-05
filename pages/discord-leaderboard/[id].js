@@ -1,11 +1,19 @@
 import Link from 'next/link'
-import dbConnect from '../lib/dbConnect'
-import Levelling from '../models/Levelling'
+import dbConnect from '../../lib/dbConnect'
+import Levelling from '../../models/Levelling'
 import { Grid } from '@geist-ui/core'
+import { Heading } from '../../components/Heading';
+import { Navbar } from '../../components/Navbar';
 
 /* Allows you to view user card info*/
 const LevellingPage = ({ pet }) => {
   return (
+    <>
+    <Heading />
+    <div className="top-bar">
+      <Navbar />
+    </div>
+    <div className="grid wrapper">
     <Grid.Container gap={2} justify="center">
     <div key={pet._id}>
         <div className="card">
@@ -27,6 +35,8 @@ const LevellingPage = ({ pet }) => {
         </div>
     </div>
     </Grid.Container>
+    </div>
+    </>
   )
 }
 

@@ -13,11 +13,11 @@ export const Navbar = () => {
             <Drawer visible={state} onClose={() => setState(false)} placement="right" mr="10px">
                 <Drawer.Subtitle>Main Menu</Drawer.Subtitle>
                 <Drawer.Content>
-                    <Link href="https://warunginternational.eu.org">
+                    <Link href="/">
                         <a><Home /> Home</a>
                     </Link> 
                     <Divider />
-                    <Link href="/">
+                    <Link href="/discord-leaderboard">
                         <a><Display /> Leaderboards</a>
                     </Link> 
                     <Divider />

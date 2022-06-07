@@ -46,7 +46,7 @@ export async function getServerSideProps({ params }) {
   const pet = await Levelling.findById(params.id).lean()
   pet._id = pet._id.toString()
 
-  return { props: { pet } }
+  return { props: { pet: JSON.parse(JSON.stringify(pet)) } }
 }
 
 export default LevellingPage

@@ -16,7 +16,7 @@ const LevellingPage = ({ pet }) => {
     <div className="grid wrapper">
     <Grid.Container gap={2} justify="center">
     <div key={pet._id}>
-        <div className="card">
+        <div className="card animate__animated animate__rubberBand">
           <img 
             src={pet.image_url}
           />

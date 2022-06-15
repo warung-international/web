@@ -12,32 +12,55 @@ const Index = ({ pets }) => (
       <div className="top-bar">
         <Navbar />
       </div>
-      <div className="grid wrapper">
   <Grid.Container gap={2} justify="center">
     {/* Create a card for each user */}
-    {pets.map((pet) => (
-      <div key={pet._id}>
-        <div className="card">
-          <img 
-            src={pet.image_url}
-          />
-          <h3 className="fpanel-name">{pet.displayname}</h3>
-          <div className="main-content">
-            <p className="displayname">{pet.displayname}</p>
-            <p className="levels">Level {pet.level}</p>
-            <div className="btn-container">
-              <Link href="/discord-leaderboard/[userid]" as={`/discord-leaderboard/${pet._id}`}>
-                <button className="btn view">Details</button>
-              </Link>
-            </div>
-          </div>
+    <div className="leaderboardBody animate__animated animate__rubberBand ">
+      <div className="leaderboardPlayersListContainer">
+        <div className="loader">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div className="leaderboardPlayersList">
+        {pets.map((pet, index) => (
+            <player key={pet._id}>
+              <div className="leaderboardPlayer">
+                  <div className="leaderboardPlayerLeft">
+                    <div className={ index === 0 ? 'leaderboardRank leaderboardRankFirst' : index === 1 ? 'leaderboardRank leaderboardRankSecond' : index === 2 ? 'leaderboardRank leaderboardRankThird' : 'leaderboardRank' }>{index + 1}</div>
+                    <div className="leaderboardPlayerIcon"><img
+                          onerror="this.src=&#39;https://cdn.discordapp.com/embed/avatars/1.png&#39;;"
+                          src={pet.image_url} />
+                    </div>
+                    <div className="leaderboardPlayerUsername">{pet.displayname}</div>
+                  </div>
+                  <div className="leaderboardPlayerStats">
+                    <div className="leaderboardPlayerStatBlock nonpriority">
+                        <div className="leaderboardPlayerStatName">LEVEL
+                        </div>
+                        <div className="leaderboardPlayerStatValue">{pet.level}
+                        </div>
+                    </div>
+                    <div className="leaderboardPlayerStatBlock">
+                        <div className="leaderboardPlayerStatName">
+                        </div>
+                        <div className="leaderboardPlayerStatValue">
+                          <Link href="/discord-leaderboard/[userid]" as={`/discord-leaderboard/${pet._id}`}>
+                            <button className="btn view">Details</button>
+                          </Link>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+              <div className="leaderboardPlayerSep"></div>
+            </player>
+          ))}
         </div>
       </div>
-    ))}
-    </Grid.Container>
-    </div>
-    <Footer />
-  </>
+  </div>
+
+  </Grid.Container>
+  <Footer />
+</>
 )
 
 /* Retrieves user(s) data from mongodb database */

@@ -13,7 +13,6 @@ const Index = ({ pets }) => (
         <Navbar />
       </div>
   <Grid.Container gap={2} justify="center">
-    {/* Create a card for each user */}
     <div className="leaderboardBody animate__animated animate__rubberBand ">
       <div className="leaderboardPlayersListContainer">
         <div className="loader">

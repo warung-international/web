@@ -29,7 +29,7 @@ export const Navbar = () => {
                         <a><Github /> Github</a>
                     </Link>
                     <Divider />
-                    <iframe src="https://discord.com/widget?id=922523614828433419&theme=dark" width="350" height="500" allowtransparency="true" frameBorder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                    <iframe src="https://discord.com/widget?id=922523614828433419&theme=dark" width="300" height="500" allowtransparency="true" frameBorder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
                 </Drawer.Content>
             </Drawer>
             

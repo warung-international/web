@@ -1,52 +1,50 @@
-import Link from 'next/link'
-import dbConnect from '../../lib/dbConnect'
-import Levelling from '../../models/Levelling'
-import { Grid } from '@geist-ui/core'
-import { Heading } from '../../components/Heading';
-import { Navbar } from '../../components/Navbar';
+import Link from "next/link";
+import dbConnect from "../../lib/dbConnect";
+import Levelling from "../../models/Levelling";
+import { Grid } from "@geist-ui/core";
+import { Heading } from "../../components/Heading";
+import { Navbar } from "../../components/Navbar";
 
 /* Allows you to view user card info*/
 const LevellingPage = ({ pet }) => {
   return (
     <>
-    <Heading />
-    <div className="top-bar">
-      <Navbar />
-    </div>
-    <div className="grid wrapper">
-    <Grid.Container gap={2} justify="center">
-    <div key={pet._id}>
-        <div className="card animate__animated animate__rubberBand">
-          <img 
-            src={pet.image_url}
-          />
-          <h3 className="fpanel-name">{pet.displayname}</h3>
-          <div className="main-content">
-            <p className="displayname">{pet.displayname}</p>
-            <p className="levels">Level {pet.level}</p>
-            <p className="stats">Total XP: {pet.formatxp}</p>
-            <p className="stats">Total Message: {pet.formatmessage}</p>
-            <div className="btn-container">
-              <Link href="/discord-leaderboard">
-                <button className="btn back">← Go Back</button>
-              </Link>
+      <Heading />
+      <div className="top-bar">
+        <Navbar />
+      </div>
+      <div className="grid wrapper">
+        <Grid.Container gap={2} justify="center">
+          <div key={pet._id}>
+            <div className="card animate__animated animate__rubberBand">
+              <img src={pet.image_url} />
+              <h3 className="fpanel-name">{pet.displayname}</h3>
+              <div className="main-content">
+                <p className="displayname">{pet.displayname}</p>
+                <p className="levels">Level {pet.level}</p>
+                <p className="stats">Total XP: {pet.formatxp}</p>
+                <p className="stats">Total Message: {pet.formatmessage}</p>
+                <div className="btn-container">
+                  <Link href="/discord-leaderboard">
+                    <button className="btn back">← Go Back</button>
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-    </div>
-    </Grid.Container>
-    </div>
+        </Grid.Container>
+      </div>
     </>
-  )
-}
+  );
+};
 
 export async function getServerSideProps({ params }) {
-  await dbConnect()
+  await dbConnect();
 
-  const pet = await Levelling.findById(params.id).lean()
-  pet._id = pet._id.toString()
+  const pet = await Levelling.findById(params.id).lean();
+  pet._id = pet._id.toString();
 
-  return { props: { pet: JSON.parse(JSON.stringify(pet)) } }
+  return { props: { pet: JSON.parse(JSON.stringify(pet)) } };
 }
 
-export default LevellingPage
+export default LevellingPage;

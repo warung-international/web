@@ -61,7 +61,7 @@ const Index = ({ pets }) => (
                         {pet.formatxp}
                       </div>
                     </div>
-                    <div class="leaderboardPlayerStatBlock">
+                    <div class="leaderboardPlayerStatBlock remove-mobile">
                       <div class="leaderboardPlayerStatName">LEVEL</div>
                       <div class="leaderboardPlayerStatValue">{pet.level}</div>
                     </div>

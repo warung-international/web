@@ -41,7 +41,7 @@ export const Navbar = () => {
         ><a className="nav_link black-link">Github</a></Link>
         </div>
         <div className="nav__rhs">
-            <Link href="https://discord.gg/">
+            <Link href="https://discord.gg/y4D5zbf4AQ">
                 <Button auto type="success">Discord</Button>
             </Link>    
         </div>

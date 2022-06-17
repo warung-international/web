@@ -14,74 +14,76 @@ const Index = ({ pets }) => (
     <div className="top-bar"></div>
     <Grid.Container gap={2} justify="center">
       <center>
-      <div className="leaderboardBody animate__animated animate__rubberBand ">
-        <div className="leaderboardPlayersListContainer">
-          <div className="leaderboardPlayersList">
-            {pets.map((pet, index) => (
-              <player key={pet._id}>
-                <div className="leaderboardPlayer">
-                  <div className="leaderboardPlayerLeft">
-                    <div
-                      className={
-                        index === 0
-                          ? "leaderboardRank leaderboardRankFirst"
-                          : index === 1
-                          ? "leaderboardRank leaderboardRankSecond"
-                          : index === 2
-                          ? "leaderboardRank leaderboardRankThird"
-                          : "leaderboardRank"
-                      }
-                    >
-                      {index + 1}
+        <div className="leaderboardBody animate__animated animate__rubberBand ">
+          <div className="leaderboardPlayersListContainer">
+            <div className="leaderboardPlayersList">
+              {pets.map((pet, index) => (
+                <player key={pet._id}>
+                  <div className="leaderboardPlayer">
+                    <div className="leaderboardPlayerLeft">
+                      <div
+                        className={
+                          index === 0
+                            ? "leaderboardRank leaderboardRankFirst"
+                            : index === 1
+                            ? "leaderboardRank leaderboardRankSecond"
+                            : index === 2
+                            ? "leaderboardRank leaderboardRankThird"
+                            : "leaderboardRank"
+                        }
+                      >
+                        {index + 1}
+                      </div>
+                      <div className="leaderboardPlayerIcon">
+                        <img
+                          onerror="this.src=&#39;https://cdn.discordapp.com/embed/avatars/1.png&#39;;"
+                          src={pet.image_url}
+                        />
+                      </div>
+                      <div className="leaderboardPlayerUsername">
+                        {pet.displayname}
+                      </div>
                     </div>
-                    <div className="leaderboardPlayerIcon">
-                      <img
-                        onerror="this.src=&#39;https://cdn.discordapp.com/embed/avatars/1.png&#39;;"
-                        src={pet.image_url}
-                      />
-                    </div>
-                    <div className="leaderboardPlayerUsername">
-                      {pet.displayname}
+                    <div class="leaderboardPlayerStats">
+                      <div class="leaderboardPlayerStatBlock remove-mobile nonpriority">
+                        <div class="leaderboardPlayerStatName">MESSAGES</div>
+                        <div class="leaderboardPlayerStatValue">
+                          {pet.formatmessage}
+                        </div>
+                      </div>
+                      <div class="leaderboardPlayerStatBlock remove-mobile nonpriority">
+                        <div class="leaderboardPlayerStatName">EXPERIENCE</div>
+                        <div class="leaderboardPlayerStatValue">
+                          {pet.formatxp}
+                        </div>
+                      </div>
+                      <div class="leaderboardPlayerStatBlock remove-mobile">
+                        <div class="leaderboardPlayerStatName">LEVEL</div>
+                        <div class="leaderboardPlayerStatValue">
+                          {pet.level}
+                        </div>
+                      </div>
+                      <div class="leaderboardPlayerStatBlock">
+                        <div class="leaderboardPlayerStatName"></div>
+                        <div class="leaderboardPlayerStatValue">
+                          <Link
+                            href="/discord-leaderboard/[userid]"
+                            as={`/discord-leaderboard/${pet._id}`}
+                          >
+                            <Button auto type="success" ghost>
+                              Details
+                            </Button>
+                          </Link>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div class="leaderboardPlayerStats">
-                    <div class="leaderboardPlayerStatBlock remove-mobile nonpriority">
-                      <div class="leaderboardPlayerStatName">MESSAGES</div>
-                      <div class="leaderboardPlayerStatValue">
-                        {pet.formatmessage}
-                      </div>
-                    </div>
-                    <div class="leaderboardPlayerStatBlock remove-mobile nonpriority">
-                      <div class="leaderboardPlayerStatName">EXPERIENCE</div>
-                      <div class="leaderboardPlayerStatValue">
-                        {pet.formatxp}
-                      </div>
-                    </div>
-                    <div class="leaderboardPlayerStatBlock remove-mobile">
-                      <div class="leaderboardPlayerStatName">LEVEL</div>
-                      <div class="leaderboardPlayerStatValue">{pet.level}</div>
-                    </div>
-                    <div class="leaderboardPlayerStatBlock">
-                      <div class="leaderboardPlayerStatName"></div>
-                      <div class="leaderboardPlayerStatValue">
-                        <Link
-                          href="/discord-leaderboard/[userid]"
-                          as={`/discord-leaderboard/${pet._id}`}
-                        >
-                          <Button auto type="success" ghost>
-                            Details
-                          </Button>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="leaderboardPlayerSep"></div>
-              </player>
-            ))}
+                  <div className="leaderboardPlayerSep"></div>
+                </player>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
       </center>
     </Grid.Container>
     <Footer />

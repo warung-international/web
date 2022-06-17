@@ -1,98 +1,3 @@
-body {
-	background-color: #000612;
-	font-family: 'Open Sans', sans-serif, Helvetica, arial, sans-serif;
-	-webkit-touch-callout: none;
-	/* iOS Safari */
-	-webkit-user-select: none;
-	/* Safari */
-	-khtml-user-select: none;
-	/* Konqueror HTML */
-	-moz-user-select: none;
-	/* Old versions of Firefox */
-	-ms-user-select: none;
-	/* Internet Explorer/Edge */
-	user-select: none;
-	/* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
-}
-
-/*
-.bg{
-	background-image: url('../imgs/bg_2.jpg');
-}
-.banner{
-	background-image: url('../imgs/header.jpg');
-	width: 100%;
-	background-repeat: no-repeat;
-	background-size: cover;
-	height: 360px;
-	position: absolute;
-	top: 0%;
-	mask: linear-gradient(0deg, transparent, rgba(255, 255, 255, 0.4) 30%);
-	-webkit-mask: linear-gradient(0deg, transparent, rgba(255, 255, 255, 0.4) 30%);
-}
-*/
-.logo {
-	display: block;
-	position: absolute;
-	top: 5%;
-	z-index: 200;
-	margin-left: -160px !important;
-	left: 50%
-}
-
-.main-container {
-	display: flex;
-	flex-grow: 2;
-	background-color: #3e4246;
-	border-radius: 3px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-	max-width: 75%;
-
-}
-
-.showLoading {
-	display: inline-block !important;
-}
-
-.lds-ripple {
-	display: none;
-	position: relative;
-	width: 80px;
-	height: 80px;
-	left: 50%;
-}
-
-.lds-ripple div {
-	position: absolute;
-	border: 4px solid #fff;
-	opacity: 1;
-	border-radius: 50%;
-	animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
-}
-
-.lds-ripple div:nth-child(2) {
-	animation-delay: -0.5s;
-}
-
-@keyframes lds-ripple {
-	0% {
-		top: 36px;
-		left: 36px;
-		width: 0;
-		height: 0;
-		opacity: 1;
-	}
-
-	100% {
-		top: 0px;
-		left: 0px;
-		width: 72px;
-		height: 72px;
-		opacity: 0;
-	}
-}
-
 a,
 abbr,
 acronym,
@@ -228,14 +133,6 @@ var {
 	flex-direction: column;
 	/* flex-direction: column; */
 	padding: 16px 20px;
-}
-
-.discordfoot {
-	width: 380px;
-	height: 100px;
-	position: fixed;
-	bottom: -2px;
-	z-index: 2;
 }
 
 @media (max-width: 480px) {
@@ -765,6 +662,8 @@ var {
 		-ms-flex-direction: column-reverse;
 		flex-direction: column-reverse;
 		padding: 0px;
+		margin-left: 10%;
+		padding-right: 5;
 	}
 }
 
@@ -804,103 +703,20 @@ var {
 	margin-bottom: 5px;
 }
 
-/**
- * Tabs
- */
-.tabs {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: center;
-}
-
-.tabs label {
-	order: 1;
-	display: block;
-	padding: 1rem 5rem;
-	margin-right: 1.5rem;
-	cursor: pointer;
-	background-color: #000724;
-	border-radius: 15px;
-	color: white;
-	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-	box-shadow: 0 0 3pt 2pt #3772d8;
-	font-weight: bold;
-	transition: background ease 0.2s;
-
-}
-
-.tabs .tab {
-	order: 99;
-	flex-grow: 1;
-	width: 100%;
-	display: none;
-	padding: 1rem;
-}
-
-.tabs input[type="radio"] {
-	display: none;
-}
-
-.tabs input[type="radio"]:checked+label {
-	background: #fff;
-	color: #000724;
-}
-
-.tabs input[type="radio"]:checked+label+.tab {
-	display: block;
-}
-
-@media (max-width: 45em) {
-
-	.tabs .tab,
-	.tabs label {
-		order: initial;
-	}
-
-	.tabs label {
-		width: 100%;
-		margin-right: 0;
-		margin-top: 0.2rem;
-	}
-}
-
 /* Nav Area */
 .top-bar {
 	width: 100%;
-	margin-top: 2%;
 	position: relative;
-	height: 80px;
+	height: 25px;
 	text-align: right;
-	margin-bottom: 2%;
-}
 
-#title {
-	position: absolute;
-	left: 20px;
-	top: 0;
-	display: inline-block;
-	height: 100%;
-}
-
-.nav {
-	height: 100%;
-	display: inline-block;
-}
-
-.nav a {
-	margin: 0 20px;
-	font-size: 120%;
-	height: 100%;
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
 }
 
 .grid {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	margin-bottom: 20%;
 }
 
 /* Styles for Cards */
@@ -997,34 +813,6 @@ li {
 	position: absolute;
 	bottom: 10px;
 	right: 10px;
-}
-
-.btn {
-	--accent: grey;
-	cursor: pointer;
-	background: transparent;
-	border: 1.5px solid var(--accent);
-	color: var(--accent);
-	border-radius: 10px;
-	padding: 10px 15px;
-	font-size: 90%;
-	letter-spacing: 1px;
-	transition: 0.5s all;
-	outline: none;
-}
-
-.btn:hover {
-	background: var(--accent);
-	color: white;
-}
-
-.back.btn {
-	--accent: green;
-}
-
-.view.btn {
-	--accent: blue;
-	margin-left: 10px;
 }
 
 /* Footer */

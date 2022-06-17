@@ -4,15 +4,15 @@ import Levelling from "../../models/Levelling";
 import { Grid } from "@geist-ui/core";
 import { Heading } from "../../components/Heading";
 import { Navbar } from "../../components/Navbar";
+import { Button } from "@geist-ui/core";
 
 /* Allows you to view user card info*/
 const LevellingPage = ({ pet }) => {
   return (
     <>
       <Heading />
-      <div className="top-bar">
-        <Navbar />
-      </div>
+      <Navbar />
+      <div className="top-bar"></div>
       <div className="grid wrapper">
         <Grid.Container gap={2} justify="center">
           <div key={pet._id}>
@@ -26,7 +26,9 @@ const LevellingPage = ({ pet }) => {
                 <p className="stats">Total Message: {pet.formatmessage}</p>
                 <div className="btn-container">
                   <Link href="/discord-leaderboard">
-                    <button className="btn back">← Go Back</button>
+                    <Button auto type="secondary" ghost>
+                      ← Go Back
+                    </Button>
                   </Link>
                 </div>
               </div>

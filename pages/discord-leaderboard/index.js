@@ -5,21 +5,17 @@ import { Grid } from "@geist-ui/core";
 import { Heading } from "../../components/Heading";
 import { Navbar } from "../../components/Navbar";
 import { Footer } from "../../components/Footer";
+import { Button } from "@geist-ui/core";
 
 const Index = ({ pets }) => (
   <>
     <Heading />
-    <div className="top-bar">
-      <Navbar />
-    </div>
+    <Navbar />
+    <div className="top-bar"></div>
     <Grid.Container gap={2} justify="center">
+      <center>
       <div className="leaderboardBody animate__animated animate__rubberBand ">
         <div className="leaderboardPlayersListContainer">
-          <div className="loader">
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
           <div className="leaderboardPlayersList">
             {pets.map((pet, index) => (
               <player key={pet._id}>
@@ -72,7 +68,9 @@ const Index = ({ pets }) => (
                           href="/discord-leaderboard/[userid]"
                           as={`/discord-leaderboard/${pet._id}`}
                         >
-                          <button className="btn view">Details</button>
+                          <Button auto type="success" ghost>
+                            Details
+                          </Button>
                         </Link>
                       </div>
                     </div>
@@ -84,6 +82,7 @@ const Index = ({ pets }) => (
           </div>
         </div>
       </div>
+      </center>
     </Grid.Container>
     <Footer />
   </>

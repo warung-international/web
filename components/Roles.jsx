@@ -13,20 +13,20 @@ export const Roles = () => {
     <>
         <div className={isActive ? 'leaderboardSidebarBlock' : 'leaderboardSidebarBlock open'}>
             <h1 onClick={handleClick}>Role Rewards</h1>
-            <div class="leaderboardSidebarBlockContentWrapper">
-              <div class="leaderboardSidebarBlockSeparator"></div>
-              <div class="leaderboardSidebarBlockContent">
-                <div class="flex flexColumn bottom10">
+            <div className="leaderboardSidebarBlockContentWrapper">
+              <div className="leaderboardSidebarBlockSeparator"></div>
+              <div className="leaderboardSidebarBlockContent">
+                <div className="flex flexColumn bottom10">
                   <h5>LEVEL 0</h5>
-                  <div class="flex flexRow flexWrap">
-                    <div class="leaderboardRole" style={{ borderColor: '#FFFFFF' }, { color: '#FFFFFF' }}>Joined
+                  <div className="flex flexRow flexWrap">
+                    <div className="leaderboardRole" style={{ borderColor: '#FFFFFF' }, { color: '#FFFFFF' }}>Joined
                     </div>
                   </div>
                 </div>
-                <div class="flex flexColumn bottom10">
+                <div className="flex flexColumn bottom10">
                   <h5>LEVEL 1</h5>
-                  <div class="flex flexRow flexWrap">
-                    <div class="leaderboardRole" style={{ borderColor: '#FFFFFF' }, { color: '#FFFFFF' }}>Newbie
+                  <div className="flex flexRow flexWrap">
+                    <div className="leaderboardRole" style={{ borderColor: '#FFFFFF' }, { color: '#FFFFFF' }}>Newbie
                     </div>
                   </div>
                 </div>

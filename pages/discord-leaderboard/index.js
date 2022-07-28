@@ -12,7 +12,7 @@ const Index = ({ pets }) => (
     <Heading />
     <Navbar />
     <section id="about">
-      <div class="container">
+      <div className="container">
         <div className="leaderboardBody animate__animated animate__rubberBand ">
           <div className="leaderboardPlayersListContainer">
             <div className="leaderboardPlayersList">
@@ -43,26 +43,37 @@ const Index = ({ pets }) => (
                         {pet.displayname}
                       </div>
                     </div>
-                    <div class="leaderboardPlayerStats">
-                      <div class="leaderboardPlayerStatBlock remove-mobile nonpriority">
-                        <div class="leaderboardPlayerStatName">MESSAGES</div>
-                        <div class="leaderboardPlayerStatValue">
+                    <div className="leaderboardPlayerStats">
+                      <div className="leaderboardPlayerStatBlock remove-mobile nonpriority">
+                        <div className="leaderboardPlayerStatName">MESSAGES</div>
+                        <div className="leaderboardPlayerStatValue">
                           {pet.formatmessage}
                         </div>
                       </div>
-                      <div class="leaderboardPlayerStatBlock remove-mobile nonpriority">
-                        <div class="leaderboardPlayerStatName">EXPERIENCE</div>
-                        <div class="leaderboardPlayerStatValue">
+                      <div className="leaderboardPlayerStatBlock remove-mobile nonpriority">
+                        <div className="leaderboardPlayerStatName">EXPERIENCE</div>
+                        <div className="leaderboardPlayerStatValue">
                           {pet.formatxp}
                         </div>
                       </div>
-                      <div class="leaderboardPlayerStatBlock remove-mobile">
-                        <div class="leaderboardPlayerStatName">LEVEL</div>
-                        <div class="leaderboardPlayerStatValue">
+                      <div className="leaderboardPlayerStatBlock remove-mobile">
+                        <div className="leaderboardPlayerStatName">LEVEL</div>
+                        <div className="leaderboardPlayerStatValue">
                           {pet.level}
                         </div>
                       </div>
-
+                      <div className="leaderboardPlayerStatBlock">
+                        <div className="leaderboardPlayerStatName"></div>
+                        <div className="leaderboardPlayerStatValue">
+                          <Link
+                            className="btn btn-primary"
+                            href="/discord-leaderboard/[userid]"
+                            as={`/discord-leaderboard/${pet._id}`}
+                          >
+                            Details
+                          </Link>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div className="leaderboardPlayerSep"></div>
@@ -72,10 +83,6 @@ const Index = ({ pets }) => (
           </div>
           <Roles />
         </div>
-      </div>
-      <div class="lds-ripple">
-        <div></div>
-        <div></div>
       </div>
     </section>
     <Footer />

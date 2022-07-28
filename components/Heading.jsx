@@ -16,8 +16,15 @@ export const Heading = () => {
         <meta name="revisit-after" content="3 days" />
         <meta name="author" content="mclemie" />
         <meta property="og:image" content="../wi-logo.png" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"></link>
         </Head>
         <Script src="https://analytics.warunginternational.eu.org/latest.js"></Script>
+        <Script src="../assets/js/discord.js"></Script>
+        <Script src="../assets/js/jquery.easing.min.js"></Script>
+        <Script src="../assets/js/script.js"></Script>
+        <Script src="../assets/js/scrolling-nav.js"></Script>
+        <Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></Script>
+        <Script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"></Script>
     </>
   );
 };

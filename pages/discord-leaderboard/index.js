@@ -1,19 +1,18 @@
 import dbConnect from "../../lib/dbConnect";
 import Levelling from "../../models/Levelling";
-import Link from "next/link";
-import { Grid } from "@geist-ui/core";
 import { Heading } from "../../components/Heading";
 import { Navbar } from "../../components/Navbar";
+import { Roles } from "../../components/Roles";
 import { Footer } from "../../components/Footer";
-import { Button } from "@geist-ui/core";
+import "inter-ui/inter.css";
+import Link from "next/link";
 
 const Index = ({ pets }) => (
   <>
     <Heading />
     <Navbar />
-    <div className="top-bar"></div>
-    <Grid.Container gap={2} justify="center">
-      <center>
+    <section id="about">
+      <div class="container">
         <div className="leaderboardBody animate__animated animate__rubberBand ">
           <div className="leaderboardPlayersListContainer">
             <div className="leaderboardPlayersList">
@@ -26,10 +25,10 @@ const Index = ({ pets }) => (
                           index === 0
                             ? "leaderboardRank leaderboardRankFirst"
                             : index === 1
-                            ? "leaderboardRank leaderboardRankSecond"
-                            : index === 2
-                            ? "leaderboardRank leaderboardRankThird"
-                            : "leaderboardRank"
+                              ? "leaderboardRank leaderboardRankSecond"
+                              : index === 2
+                                ? "leaderboardRank leaderboardRankThird"
+                                : "leaderboardRank"
                         }
                       >
                         {index + 1}
@@ -63,19 +62,7 @@ const Index = ({ pets }) => (
                           {pet.level}
                         </div>
                       </div>
-                      <div class="leaderboardPlayerStatBlock">
-                        <div class="leaderboardPlayerStatName"></div>
-                        <div class="leaderboardPlayerStatValue">
-                          <Link
-                            href="/discord-leaderboard/[userid]"
-                            as={`/discord-leaderboard/${pet._id}`}
-                          >
-                            <Button auto type="success" ghost>
-                              Details
-                            </Button>
-                          </Link>
-                        </div>
-                      </div>
+
                     </div>
                   </div>
                   <div className="leaderboardPlayerSep"></div>
@@ -83,9 +70,14 @@ const Index = ({ pets }) => (
               ))}
             </div>
           </div>
+          <Roles />
         </div>
-      </center>
-    </Grid.Container>
+      </div>
+      <div class="lds-ripple">
+        <div></div>
+        <div></div>
+      </div>
+    </section>
     <Footer />
   </>
 );

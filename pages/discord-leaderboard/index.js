@@ -1,9 +1,9 @@
 import dbConnect from "../../lib/dbConnect";
 import Levelling from "../../models/Levelling";
-import { Heading } from "../../components/Heading";
-import { Navbar } from "../../components/Navbar";
-import { Roles } from "../../components/Roles";
-import { Footer } from "../../components/Footer";
+import { Heading } from "../../assets/components/Heading";
+import { Navbar } from "../../assets/components/Navbar";
+import { Roles } from "../../assets/components/Roles";
+import { Footer } from "../../assets/components/Footer";
 import "inter-ui/inter.css";
 import Link from "next/link";
 

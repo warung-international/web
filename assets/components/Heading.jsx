@@ -14,7 +14,7 @@ export const Heading = () => {
         <meta name="keywords" content="warung, international, warung international, aku ganteng, leaderboards" />
         <meta name="robots" content="index, follow" />
         <meta name="revisit-after" content="3 days" />
-        <meta name="author" content="mclemie" />
+        <meta name="author" content="clemiee" />
         <meta property="og:image" content="../wi-logo.png" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"></link>
         </Head>

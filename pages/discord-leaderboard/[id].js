@@ -2,8 +2,8 @@ import Link from "next/link";
 import dbConnect from "../../lib/dbConnect";
 import Levelling from "../../models/Levelling";
 import "inter-ui/inter.css";
-import { Heading } from "../../components/Heading";
-import { Navbar } from "../../components/Navbar";
+import { Heading } from "../../assets/components/Heading";
+import { Navbar } from "../../assets/components/Navbar";
 
 /* Allows you to view user card info*/
 const LevellingPage = ({ pet }) => {

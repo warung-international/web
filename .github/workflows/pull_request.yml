@@ -7,14 +7,18 @@ jobs:
     name: Deploy (Preview)
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
       - name: Generate token
         id: app_token
         uses: tibdex/github-app-token@v1
         with:
           app_id: ${{ secrets.APP_ID }}
           private_key: ${{ secrets.PRIVATE_KEY }}
+
+      - name: Checkout
+        uses: actions/checkout@v2
+        with: 
+          token: ${{ steps.app_token.outputs.token }}
+          
       - name: Deploy to Vercel Action
         uses: BetaHuhn/deploy-to-vercel-action@latest
         with:

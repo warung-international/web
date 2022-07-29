@@ -1,0 +1,30 @@
+name: Production
+on:
+  push:
+    branches: [master]
+jobs:
+  deploy:
+    name: Deploy (Production)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate token
+        id: app_token
+        uses: tibdex/github-app-token@v1
+        with:
+          app_id: ${{ secrets.APP_ID }}
+          private_key: ${{ secrets.PRIVATE_KEY }}
+
+      - name: Checkout
+        uses: actions/checkout@v2
+        with: 
+          token: ${{ steps.app_token.outputs.token }}
+      
+      - name: Deploy to Vercel Action
+        uses: BetaHuhn/deploy-to-vercel-action@latest
+        with:
+          GITHUB_TOKEN: ${{ steps.app_token.outputs.token }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.HOME_PID }}
+          PRODUCTION: true # Deploy to production environment
+          ALIAS_DOMAINS: ${{ secrets.MAIN_DOMAINS }}

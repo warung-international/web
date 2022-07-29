@@ -1,19 +1,18 @@
 import dbConnect from "../../lib/dbConnect";
 import Levelling from "../../models/Levelling";
+import { Heading } from "../../assets/components/Heading";
+import { Navbar } from "../../assets/components/Navbar";
+import { Roles } from "../../assets/components/Roles";
+import { Footer } from "../../assets/components/Footer";
+import "inter-ui/inter.css";
 import Link from "next/link";
-import { Grid } from "@geist-ui/core";
-import { Heading } from "../../components/Heading";
-import { Navbar } from "../../components/Navbar";
-import { Footer } from "../../components/Footer";
-import { Button } from "@geist-ui/core";
 
 const Index = ({ pets }) => (
   <>
     <Heading />
     <Navbar />
-    <div className="top-bar"></div>
-    <Grid.Container gap={2} justify="center">
-      <center>
+    <section id="about">
+      <div className="container">
         <div className="leaderboardBody animate__animated animate__rubberBand ">
           <div className="leaderboardPlayersListContainer">
             <div className="leaderboardPlayersList">
@@ -26,10 +25,10 @@ const Index = ({ pets }) => (
                           index === 0
                             ? "leaderboardRank leaderboardRankFirst"
                             : index === 1
-                            ? "leaderboardRank leaderboardRankSecond"
-                            : index === 2
-                            ? "leaderboardRank leaderboardRankThird"
-                            : "leaderboardRank"
+                              ? "leaderboardRank leaderboardRankSecond"
+                              : index === 2
+                                ? "leaderboardRank leaderboardRankThird"
+                                : "leaderboardRank"
                         }
                       >
                         {index + 1}
@@ -44,35 +43,34 @@ const Index = ({ pets }) => (
                         {pet.displayname}
                       </div>
                     </div>
-                    <div class="leaderboardPlayerStats">
-                      <div class="leaderboardPlayerStatBlock remove-mobile nonpriority">
-                        <div class="leaderboardPlayerStatName">MESSAGES</div>
-                        <div class="leaderboardPlayerStatValue">
+                    <div className="leaderboardPlayerStats">
+                      <div className="leaderboardPlayerStatBlock remove-mobile nonpriority">
+                        <div className="leaderboardPlayerStatName">MESSAGES</div>
+                        <div className="leaderboardPlayerStatValue">
                           {pet.formatmessage}
                         </div>
                       </div>
-                      <div class="leaderboardPlayerStatBlock remove-mobile nonpriority">
-                        <div class="leaderboardPlayerStatName">EXPERIENCE</div>
-                        <div class="leaderboardPlayerStatValue">
+                      <div className="leaderboardPlayerStatBlock remove-mobile nonpriority">
+                        <div className="leaderboardPlayerStatName">EXPERIENCE</div>
+                        <div className="leaderboardPlayerStatValue">
                           {pet.formatxp}
                         </div>
                       </div>
-                      <div class="leaderboardPlayerStatBlock remove-mobile">
-                        <div class="leaderboardPlayerStatName">LEVEL</div>
-                        <div class="leaderboardPlayerStatValue">
+                      <div className="leaderboardPlayerStatBlock remove-mobile">
+                        <div className="leaderboardPlayerStatName">LEVEL</div>
+                        <div className="leaderboardPlayerStatValue">
                           {pet.level}
                         </div>
                       </div>
-                      <div class="leaderboardPlayerStatBlock">
-                        <div class="leaderboardPlayerStatName"></div>
-                        <div class="leaderboardPlayerStatValue">
+                      <div className="leaderboardPlayerStatBlock">
+                        <div className="leaderboardPlayerStatName"></div>
+                        <div className="leaderboardPlayerStatValue">
                           <Link
+                            className="btn btn-primary"
                             href="/discord-leaderboard/[userid]"
                             as={`/discord-leaderboard/${pet._id}`}
                           >
-                            <Button auto type="success" ghost>
-                              Details
-                            </Button>
+                            <button className="btn view">Details</button>
                           </Link>
                         </div>
                       </div>
@@ -83,9 +81,35 @@ const Index = ({ pets }) => (
               ))}
             </div>
           </div>
+          <Roles />
         </div>
-      </center>
-    </Grid.Container>
+      </div>
+    </section>
+    <style jsx>{`
+          .btn {
+            --accent: grey;
+            cursor: pointer;
+            background: transparent;
+            border: 1.5px solid var(--accent);
+            color: var(--accent);
+            border-radius: 10px;
+            padding: 10px 15px;
+            font-size: 90%;
+            letter-spacing: 1px;
+            transition: 0.5s all;
+            outline: none;
+          }
+          
+          .btn:hover {
+            background: var(--accent);
+            color: white;
+          }
+          
+          .view.btn {
+            --accent: lightblue;
+            margin-left: 10px;
+          }
+        `}</style>
     <Footer />
   </>
 );

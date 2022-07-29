@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const Footer = () => {
   return (
     <>
-        <footer className="text-center text-muted footer-white">
+        <footer className="text-center text-muted footer-dark">
         <br />
         <a href="https://simpleanalytics.com/warunginternational.eu.org?utm_source=warunginternational.eu.org&utm_content=badge" referrerPolicy="origin" target="_blank" rel="noreferrer"><img src="https://simpleanalyticsbadges.com/warunginternational.eu.org?mode=dark" loading="lazy" crossOrigin="anonymous" /></a>
         <br />

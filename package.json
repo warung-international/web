@@ -13,8 +13,6 @@
     "@emotion/react": "latest",
     "@emotion/styled": "latest",
     "framer-motion": "latest",
-    "@geist-ui/core": "latest",
-    "@geist-ui/icons": "latest",
     "inter-ui": "latest",
     "mongoose": "latest",
     "next": "latest",

@@ -70,7 +70,7 @@ const Index = ({ pets }) => (
                             href="/discord-leaderboard/[userid]"
                             as={`/discord-leaderboard/${pet._id}`}
                           >
-                            Details
+                            <button className="btn view">Details</button>
                           </Link>
                         </div>
                       </div>
@@ -85,6 +85,31 @@ const Index = ({ pets }) => (
         </div>
       </div>
     </section>
+    <style jsx>{`
+          .btn {
+            --accent: grey;
+            cursor: pointer;
+            background: transparent;
+            border: 1.5px solid var(--accent);
+            color: var(--accent);
+            border-radius: 10px;
+            padding: 10px 15px;
+            font-size: 90%;
+            letter-spacing: 1px;
+            transition: 0.5s all;
+            outline: none;
+          }
+          
+          .btn:hover {
+            background: var(--accent);
+            color: white;
+          }
+          
+          .view.btn {
+            --accent: lightblue;
+            margin-left: 10px;
+          }
+        `}</style>
     <Footer />
   </>
 );

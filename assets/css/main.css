@@ -35,6 +35,15 @@ body {
 	top: 5%;
 	z-index: 200;
 	margin-left: -160px !important;
+	left: 51%
+}
+
+.logo-navbar {
+	display: block;
+	position: absolute;
+	top: 5%;
+	z-index: 200;
+	margin-left: -160px !important;
 	left: 55%
 }
 

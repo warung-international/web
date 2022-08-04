@@ -17,7 +17,7 @@ const LevellingPage = ({ pet }) => {
       <div className="grid wrapper">
         <div key={pet._id}>
           <div className="card animate__animated animate__rubberBand">
-            <FallbackImg src={pet.image_url} width="100%" height="100%"/>
+            <FallbackImg src={pet.image_url} style={{ objectFit: 'cover' }} width="100%" height="100%" />
             <h3 className="fpanel-name">{pet.displayname}</h3>
             <div className="main-content">
               <p className="displayname">{pet.displayname}</p>

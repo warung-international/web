@@ -3,19 +3,21 @@ import dbConnect from "../../lib/dbConnect";
 import Levelling from "../../models/Levelling";
 import "inter-ui/inter.css";
 import { Heading } from "../../assets/components/Heading";
-import { Navbar } from "../../assets/components/Navbar";
+import { CardNavbar } from "../../assets/components/CardNavbar";
+import { FallbackImg } from "../../assets/components/FallbackImg";
+
 
 /* Allows you to view user card info*/
 const LevellingPage = ({ pet }) => {
   return (
     <>
       <Heading />
-      <Navbar />
+      <CardNavbar />
       <div className="top-bar"></div>
       <div className="grid wrapper">
         <div key={pet._id}>
           <div className="card animate__animated animate__rubberBand">
-            <img src={pet.image_url} />
+            <FallbackImg src={pet.image_url} style={{ objectFit: 'cover' }} width="100%" height="100%" />
             <h3 className="fpanel-name">{pet.displayname}</h3>
             <div className="main-content">
               <p className="displayname">{pet.displayname}</p>

@@ -6,6 +6,7 @@ import { Roles } from "../../assets/components/Roles";
 import { Footer } from "../../assets/components/Footer";
 import "inter-ui/inter.css";
 import Link from "next/link";
+import { FallbackImg } from "../../assets/components/FallbackImg";
 
 const Index = ({ pets }) => (
   <>
@@ -13,75 +14,87 @@ const Index = ({ pets }) => (
     <Navbar />
     <section id="about">
       <div className="container">
-        <div className="leaderboardBody animate__animated animate__rubberBand ">
-          <div className="leaderboardPlayersListContainer">
-            <div className="leaderboardPlayersList">
-              {pets.map((pet, index) => (
-                <player key={pet._id}>
-                  <div className="leaderboardPlayer">
-                    <div className="leaderboardPlayerLeft">
-                      <div
-                        className={
-                          index === 0
-                            ? "leaderboardRank leaderboardRankFirst"
-                            : index === 1
-                              ? "leaderboardRank leaderboardRankSecond"
-                              : index === 2
-                                ? "leaderboardRank leaderboardRankThird"
-                                : "leaderboardRank"
-                        }
-                      >
-                        {index + 1}
-                      </div>
-                      <div className="leaderboardPlayerIcon">
-                        <img
-                          onerror="this.src=&#39;https://cdn.discordapp.com/embed/avatars/1.png&#39;;"
-                          src={pet.image_url}
-                        />
-                      </div>
-                      <div className="leaderboardPlayerUsername">
-                        {pet.displayname}
-                      </div>
-                    </div>
-                    <div className="leaderboardPlayerStats">
-                      <div className="leaderboardPlayerStatBlock remove-mobile nonpriority">
-                        <div className="leaderboardPlayerStatName">MESSAGES</div>
-                        <div className="leaderboardPlayerStatValue">
-                          {pet.formatmessage}
-                        </div>
-                      </div>
-                      <div className="leaderboardPlayerStatBlock remove-mobile nonpriority">
-                        <div className="leaderboardPlayerStatName">EXPERIENCE</div>
-                        <div className="leaderboardPlayerStatValue">
-                          {pet.formatxp}
-                        </div>
-                      </div>
-                      <div className="leaderboardPlayerStatBlock remove-mobile">
-                        <div className="leaderboardPlayerStatName">LEVEL</div>
-                        <div className="leaderboardPlayerStatValue">
-                          {pet.level}
-                        </div>
-                      </div>
-                      <div className="leaderboardPlayerStatBlock">
-                        <div className="leaderboardPlayerStatName"></div>
-                        <div className="leaderboardPlayerStatValue">
-                          <Link
-                            className="btn btn-primary"
-                            href="/discord-leaderboard/[userid]"
-                            as={`/discord-leaderboard/${pet._id}`}
-                          >
-                            <button className="btn view">Details</button>
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
+        <div className="row animate__animated animate__rubberBand ">
+          <div className="tabs">
+            <input type="radio" name="tabs" defaultChecked={true} />
+            <label>Default</label>
+            <div className="tab">
+              <div className="leaderboardBody animate__animated animate__rubberBand ">
+                <div className="col-lg-8 mx-auto leaderboardPlayersListContainer">
+                  <div className="loader">
+                    <div></div>
+                    <div></div>
+                    <div></div>
                   </div>
-                  <div className="leaderboardPlayerSep"></div>
-                </player>
-              ))}
+                  <div className="leaderboardPlayersList">
+                    {pets.map((pet, index) => (
+                      <player key={pet._id}>
+                        <div className="leaderboardPlayer">
+                          <div className="leaderboardPlayerLeft">
+                            <div
+                              className={
+                                index === 0
+                                  ? "leaderboardRank leaderboardRankFirst"
+                                  : index === 1
+                                    ? "leaderboardRank leaderboardRankSecond"
+                                    : index === 2
+                                      ? "leaderboardRank leaderboardRankThird"
+                                      : "leaderboardRank"
+                              }
+                            >
+                              {index + 1}
+                            </div>
+                            <div className="leaderboardPlayerIcon">
+                              <FallbackImg
+                                src={pet.image_url}
+                              />
+                            </div>
+                            <div className="leaderboardPlayerUsername">
+                              {pet.displayname}
+                            </div>
+                          </div>
+                          <div className="leaderboardPlayerStats">
+                            <div className="leaderboardPlayerStatBlock remove-mobile nonpriority">
+                              <div className="leaderboardPlayerStatName">MESSAGES</div>
+                              <div className="leaderboardPlayerStatValue">
+                                {pet.formatmessage}
+                              </div>
+                            </div>
+                            <div className="leaderboardPlayerStatBlock remove-mobile nonpriority">
+                              <div className="leaderboardPlayerStatName">EXPERIENCE</div>
+                              <div className="leaderboardPlayerStatValue">
+                                {pet.formatxp}
+                              </div>
+                            </div>
+                            <div className="leaderboardPlayerStatBlock remove-mobile">
+                              <div className="leaderboardPlayerStatName">LEVEL</div>
+                              <div className="leaderboardPlayerStatValue">
+                                {pet.level}
+                              </div>
+                            </div>
+                            <div className="leaderboardPlayerStatBlock">
+                              <div className="leaderboardPlayerStatName"></div>
+                              <div className="leaderboardPlayerStatValue">
+                                <Link
+                                  className="btn btn-primary"
+                                  href="/discord-leaderboard/[userid]"
+                                  as={`/discord-leaderboard/${pet._id}`}
+                                >
+                                  <button className="btn view">Details</button>
+                                </Link>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="leaderboardPlayerSep"></div>
+                      </player>
+                    ))}
+                  </div>
+                </div>
+                <Roles />
+              </div>
             </div>
           </div>
-          <Roles />
         </div>
       </div>
     </section>

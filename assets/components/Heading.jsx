@@ -16,7 +16,6 @@ export const Heading = () => {
         <meta name="revisit-after" content="3 days" />
         <meta name="author" content="clemiee" />
         <meta property="og:image" content="../wi-logo.png" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"></link>
         </Head>
         <Script src="https://analytics.warunginternational.eu.org/latest.js"></Script>
         <Script src="../assets/js/discord.js"></Script>

@@ -76,11 +76,10 @@ const Index = ({ pets }) => (
                               <div className="leaderboardPlayerStatName"></div>
                               <div className="leaderboardPlayerStatValue">
                                 <Link
-                                  className="btn btn-primary"
                                   href="/discord-leaderboard/[userid]"
                                   as={`/discord-leaderboard/${pet._id}`}
                                 >
-                                  <button className="btn view">Details</button>
+                                  <button className="btn btn-primary">Details</button>
                                 </Link>
                               </div>
                             </div>
